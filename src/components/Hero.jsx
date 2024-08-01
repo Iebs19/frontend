@@ -10,7 +10,7 @@ function Hero() {
         <p className='text-3xl'>Mining Insights for Data Driven Success</p>
       </div>
       <video 
-        className="absolute inset-0 w-full h-full object-cover transform rotate-12 scale-110 animate-scroll opacity-50"
+        className="absolute inset-0 w-screen h-full object-cover transform rotate-12 scale-110 animate-scroll opacity-50"
         src={video}
         autoPlay
         loop
