@@ -5,17 +5,19 @@ import gif from './assets/hero.gif'
 import './App.css'
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
+import Carousel from './components/Carousel'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <div className='w-screen h-screen'>
-    <Navbar/>
-
-    <Hero/>
-    </div>
+      <div>
+        <div className='w-screen overflow-hidden'>
+          <Navbar />
+        </div>
+        <Carousel />
+      </div>
     </>
   )
 }
