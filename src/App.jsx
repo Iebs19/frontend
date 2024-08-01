@@ -1,22 +1,17 @@
 import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import gif from './assets/hero.gif'
 import './App.css'
-import video from './assets/gif.mp4'
+import Hero from './components/Hero'
 
 function App() {
+  const [count, setCount] = useState(0)
+
   return (
-    <div className="relative w-full h-screen flex justify-center items-center overflow-hidden">
-      <div className="relative z-10 text-black text-4xl text-center animate-fadeIn">
-        <h1>InSimine</h1>
-      </div>
-      <video 
-        className="absolute inset-0 w-full h-full object-cover opacity-70"
-        src={video}
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
-    </div>
+    <>
+    <Hero/>
+    </>
   )
 }
 
