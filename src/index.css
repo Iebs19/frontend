@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -33,12 +32,15 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+  background-color: rgba(41, 196, 248, 0.2);
   background-image: url('/src/assets/Vector2.png');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
 }
+
 
 h1 {
   font-size: 3.2em;
