@@ -25,7 +25,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export const Navbar = () => {
   return (
-    <div className="sticky top-0 z-50 flex w-full justify-between p-4 text-black bg-white backdrop-blur-md">
+    <div className="sticky top-0 z-50 flex w-full justify-between p-4 text-black bg-slate-50 rounded-xl mb-2 backdrop-blur-md">
       <div className="flex items-center">
         <Logo />
       </div>
@@ -35,9 +35,13 @@ export const Navbar = () => {
 };
 
 const Logo = () => {
-  return <div className="text-lg font-bold">
-       <img src={logo} alt="Insimine Logo" className="h-8" />
-</div>;
+  return (
+    <div className="text-lg font-bold">
+      <a href="/">
+        <img src={logo} alt="Insimine Logo" className="h-8" />
+      </a>
+    </div>
+  );
 };
 
 const Tabs = () => {
@@ -66,6 +70,7 @@ const Tabs = () => {
           handleSetSelected={handleSetSelected}
           tab={t.id}
           hasDropdown={!!t.dropdown}
+          href={t.href}
         >
           {t.title}
         </Tab>
@@ -78,10 +83,11 @@ const Tabs = () => {
   );
 };
 
-const Tab = ({ children, tab, handleSetSelected, selected, hasDropdown }) => {
+const Tab = ({ children, tab, handleSetSelected, selected, hasDropdown, href }) => {
   return (
     <div className="relative">
-      <button
+      <a
+        href={href || "#"}
         id={`shift-tab-${tab}`}
         onMouseEnter={() => handleSetSelected(tab)}
         onClick={() => handleSetSelected(tab)}
@@ -95,7 +101,7 @@ const Tab = ({ children, tab, handleSetSelected, selected, hasDropdown }) => {
             className={`transition-transform ${selected === tab ? "rotate-180" : ""}`}
           />
         )}
-      </button>
+      </a>
     </div>
   );
 };
@@ -169,7 +175,7 @@ const Nub = ({ selected }) => {
 const Blogs = () => {
   return (
     <div>
-      <h3 className="mb-2 text-sm font-medium">Blogs</h3>
+      <h3 className="mb-2 text-sm font-medium"><a href="/blog">Blogs</a></h3>
     </div>
   );
 };
@@ -177,7 +183,7 @@ const Blogs = () => {
 const CaseStudies = () => {
   return (
     <div>
-      <h3 className="mb-2 text-sm font-medium">Case Studies</h3>
+      <h3 className="mb-2 text-sm font-medium"><a href="/case-studies">Case Studies</a></h3>
     </div>
   );
 };
@@ -185,7 +191,7 @@ const CaseStudies = () => {
 const WhitePapers = () => {
   return (
     <div>
-      <h3 className="mb-2 text-sm font-medium">White Papers</h3>
+      <h3 className="mb-2 text-sm font-medium"><a href="/white-paper">White Paper</a></h3>
     </div>
   );
 };
@@ -193,7 +199,8 @@ const WhitePapers = () => {
 const TABS = [
   {
     title: "About Us",
-    Component: () => <div>About Us content</div>,
+    href: "/about-us",
+    Component: () => <a href='/about-us'>About Us</a>,
   },
   {
     title: "Insights",
@@ -206,6 +213,7 @@ const TABS = [
   },
   {
     title: "Contact Us",
-    Component: () => <div>Contact Us content</div>,
+    href: "/contact-us",
+    Component: () => <a href='/contact-us'>Contact Us</a>,
   },
 ].map((n, idx) => ({ ...n, id: idx + 1 }));
