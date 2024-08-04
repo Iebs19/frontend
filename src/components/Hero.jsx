@@ -102,10 +102,10 @@ const OverlayCopy = ({ subheading, heading }) => {
       ref={targetRef}
       className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white"
     >
-      <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl">
+      <p className="mb-2 text-center text-5xl md:mb-4 md:text-7xl font-bold">
         {subheading}
       </p>
-      <p className="text-center text-4xl font-bold md:text-7xl">{heading}</p>
+      <p className="text-center text-4xl font-bold md:text-4xl">{heading}</p>
     </motion.div>
   );
 };
@@ -119,7 +119,7 @@ const ExampleContent = () => (
       <p className="mb-4 text-xl md:text-2xl text-darkBlue">
       InsiMine is committed to support organizations around data engineering, big data management, AI and GenAI applications. As the overwhelming amount of data present challenges to the businesses in making informed decisions. We offer our data engineering and analytics frameworks that enable our clients in meeting their unique needs.
       </p>
-      <button className="w-full rounded bg-darkBlue px-9 py-4 text-xl text-white transition-colors hover:bg-green md:w-fit">
+      <button className="bg-darkBlue text-white hover:bg-green hover:text-black font-bold border border-green py-3 px-7 rounded transition">
         Learn more <FiArrowUpRight className="inline" />
       </button>
     </div>

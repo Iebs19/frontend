@@ -22,17 +22,17 @@ const testimonialList = [
   ],
   [
     {
-      author: "— VP of Data Management, Pharmaceutical Company",
+      author: "VP of Data Management, Pharmaceutical Company",
       content:
         "InsiMine’s comprehensive big data solutions have transformed our data landscape. Their ability to manage and analyze large volumes of data has given us a competitive edge in the pharmaceutical industry. The team’s expertise and commitment to excellence are evident in every project they undertake.",
     },
     {
-      author: "— Chief Medical Officer, Precision Health Company",
+      author: "Chief Medical Officer, Precision Health Company",
       content:
         "The innovative GenAI services provided by InsiMine have revolutionized our approach to personalized medicine. Their cutting-edge solutions have enabled us to develop more accurate predictive models and improve patient outcomes. The team’s expertise and dedication are truly impressive.",
     },
     {
-      author: "— Director of AI Research, Diagnostic Company",
+      author: "Director of AI Research, Diagnostic Company",
       content:
         "InsiMine’s data engineering and AI integration services have been instrumental in advancing our research capabilities. Their solutions have enhanced our data processing efficiency and enabled us to leverage AI for groundbreaking discoveries. We highly recommend InsiMine for their exceptional services and expertise.",
     },

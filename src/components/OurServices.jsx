@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import vector2 from '../assets/Vector2.png'
 
 const services = [
     {
-        title: 'Service 1',
-        description: 'This is a detailed description of Service 1.',
+        title: 'Data Engineering',
+        description: 'Develop a robust data strategy, governance framework, and integration solutions for seamless data management.',
     },
     {
-        title: 'Service 2',
-        description: 'This is a detailed description of Service 2.',
+        title: 'Data Lakes & Big Data Management',
+        description: 'Centralize and manage vast amounts of structured and unstructured data efficiently.',
     },
     {
-        title: 'Service 3',
-        description: 'This is a detailed description of Service 3.',
+        title: 'AI & Gen AI Applications',
+        description: 'Leverage advanced analytics and AI-driven solutions to transform your business operations.',
     },
 ];
 
@@ -35,12 +34,23 @@ const OurServices = () => {
     };
 
     return (
-        <div className="flex flex-col items-center py-16">
+        <div className="flex flex-col items-center py-16 backdrop-blur-md">
             <div className='flex flex-row'>
-
-                <h2 className="text-4xl font-bold text-darkBlue mb-12 mr-2">Our </h2><h2 className='text-4xl font-bold mb-12 text-darkBlue'> Services</h2>
+                <h2 className="text-4xl font-bold text-darkBlue mb-12 mr-2">Our </h2>
+                <h2 className='text-4xl font-bold mb-12 text-darkBlue'> Capabilities</h2>
             </div>
-            <div className="relative flex justify-between w-full max-w-4xl mb-12 " >
+            <div className="mb-6 text-center max-w-7xl">
+                <p className="text-xl text-darkBlue mb-4">
+                    Unlock the full potential of your data with InsiMine's specialized data and analytics services tailored for the pharmaceutical and healthcare industries.
+                </p>
+                <p className="text-xl text-darkBlue mb-4">
+                    Our innovative solutions transform raw data into actionable insights, driving growth, improving patient outcomes, and enhancing operational efficiency.
+                </p>
+                <p className="text-xl text-darkBlue">
+                    Discover how our expertise in Data Engineering, Data Lakes & Big Data Management, and AI & Gen AI Applications can empower your organization to make informed, intelligent decisions.
+                </p>
+            </div>
+            <div className="relative flex justify-between w-full max-w-7xl mb-12" >
                 {services.map((service, index) => (
                     <div
                         key={index}
@@ -57,7 +67,7 @@ const OurServices = () => {
                         </motion.div>
                         {activeService === index && (
                             <motion.div
-                                className="absolute top-full left-0 right-0 mt-4 p-4 bg-white shadow-lg rounded-lg"
+                                className="absolute top-full left-0 right-0 mt-4 mb-4 p-4 bg-lightBlue text-darkBlue shadow-lg rounded-lg"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: 20 }}
@@ -69,12 +79,15 @@ const OurServices = () => {
                     </div>
                 ))}
             </div>
-            <button
+            <br />
+            <motion.button
                 onClick={handleButtonClick}
-                className="px-6 py-2 rounded-full bg-darkBlue text-white text-xl font-semibold hover:bg-blue-600 transition-all duration-300"
+                className={`bg-darkBlue text-white hover:bg-green hover:text-black font-bold border border-green py-3 px-7 rounded transition ${activeService !== null ? 'mt-5' : ''}`}
+                animate={{ y: activeService !== null ? 8 : 0 }}
+                transition={{ duration: 0.3 }}
             >
                 See All Services
-            </button>
+            </motion.button>
         </div>
     );
 };

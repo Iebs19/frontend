@@ -29,7 +29,7 @@ const LogoCarousel = () => {
                 <div className='flex flex-row items-center justify-center'>
                     <h2 className="text-4xl font-bold text-darkBlue mb-12 mr-2">Our </h2><h2 className='text-4xl font-bold mb-12 text-darkBlue'>Clients</h2>
                 </div>
-            <div className="flex flex-nowrap w-full overflow-hidden">
+            <div className="flex flex-nowrap w-full overflow-hidden pb-6">
                 <Marquee
                     gradient={false}
                     speed={50}
@@ -38,7 +38,7 @@ const LogoCarousel = () => {
                     delay={0}
                     play={true}>
                     {logos.map((logo, index) => (
-                        <div key={index} className="flex-shrink-0 w-32 h-32 mx-4 flex items-center justify-center bg-white shadow-md rounded-lg">
+                        <div key={index} className="flex-shrink-0 w-32 h-32 mx-4 flex items-center justify-center backdrop-blur-md shadow-md rounded-lg">
                             <img src={logo} alt={`Logo ${index}`} className="w-24 h-24 object-contain" />
                         </div>
                     ))}

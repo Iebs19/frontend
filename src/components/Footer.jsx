@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Logo from "../assets/logo.png"
 
 const footerData = {
-  logo: 'https://via.placeholder.com/150', // Replace with your company's logo URL
+  logo: {Logo}, // Replace with your company's logo URL
   menus: [
     {
       title: 'Company',
@@ -38,7 +39,7 @@ const footerData = {
 const Footer = () => {
   return (
     <motion.footer
-      className="bg-darkBlue text-white py-12"
+      className="bg-darkBlue/30 backdrop-blur-md text-white py-12"
       initial={{ y: 50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1 }}
@@ -46,7 +47,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-between items-center">
           <div className="w-full lg:w-1/4 mb-8 lg:mb-0">
-            <img src={footerData.logo} alt="Company Logo" className="h-16" />
+            <img src={Logo} alt="Company Logo" className="h-16" />
           </div>
           {footerData.menus.map((menu, index) => (
             <div key={index} className="w-full lg:w-1/4 mb-8 lg:mb-0">
@@ -59,7 +60,7 @@ const Footer = () => {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <a href={link.link} className="text-sm text-lightBlue">
+                    <a href={link.link} className="text-sm text-darkBlue">
                       {link.title}
                     </a>
                   </motion.li>
@@ -75,7 +76,7 @@ const Footer = () => {
               <motion.a
                 key={index}
                 href={item.link}
-                className="text-sm text-lightBlue"
+                className="text-sm text-darkBlue"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
