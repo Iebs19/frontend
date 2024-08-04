@@ -8,8 +8,9 @@ import OurServices from './components/OurServices';
 import LogoCarousel from './components/LogoCarousel';
 import Footer from './components/Footer';
 import Sectionone from './components/Sectionone';
-import CoverflowEffect from './components/CoverFlowEffect';
+import { Blog } from './components/Blog';
 import Testimonials from './components/Testimonials';
+import BlogPage from './pages/BlogPage';
 
 function App() {
   return (
@@ -17,11 +18,11 @@ function App() {
       <div>
         <Navbar />
         <Hero/>
-
+        <Blog/>
         <Sectionone />
-        <CoverflowEffect/>
         <Testimonials />
         <Footer />
+        {/* <BlogPage/> */}
       </div>
     </>
   );
