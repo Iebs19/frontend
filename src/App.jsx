@@ -9,6 +9,7 @@ import LogoCarousel from './components/LogoCarousel';
 import Footer from './components/Footer';
 import Sectionone from './components/Sectionone';
 import CoverflowEffect from './components/CoverFlowEffect';
+import Testimonials from './components/Testimonials';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
 
         <Sectionone />
         <CoverflowEffect/>
+        <Testimonials />
         <Footer />
       </div>
     </>
