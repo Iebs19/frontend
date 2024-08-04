@@ -25,7 +25,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export const Navbar = () => {
   return (
-    <div className="fixed top-0 z-50 flex w-full justify-between p-4 text-black bg-transparent backdrop-blur-md">
+    <div className="fixed top-0 z-50 flex w-full justify-between p-4 text-black bg-white backdrop-blur-md">
       <div className="flex items-center">
         <Logo />
       </div>
