@@ -38,14 +38,14 @@ const BlogItem = ({ blog }) => {
 	const { title, description, author, date, month, year, image } = blog;
 
 	return (
-		<article className="rounded-lg">
+		<article className="rounded-lg backdrop-blur-md">
 			<div className="relative">
 				<img
 					src={image}
 					alt={title}
 					className="h-auto w-full rounded-lg shadow-lg dark:shadow-none"
 				/>
-				<div className="absolute bottom-2 left-2 text-lg leading-6 px-6 py-3 font-black bg-white opacity-80 rounded-lg">
+				<div className="absolute bottom-2 left-2 text-lg leading-6 px-6 py-3 font-black text-darkBlue bg-green opacity-80 rounded-lg">
 					{date}
 					<br />
 					{month}
@@ -56,15 +56,15 @@ const BlogItem = ({ blog }) => {
 			<div className="p-3">
 				<p className="font-light text-sm leading-6 mb-2">
 					By{" "}
-					<a href="#!" className="text-blue-600">
+					<a href="#!" className="text-darkBlue">
 						{author}
 					</a>
 				</p>
-				<h4 className="font-medium text-2xl">{title}</h4>
-				<p className="opacity-60 mt-3 mb-6">{description}</p>
+				<h4 className="font-medium text-2xl text-darkBlue">{title}</h4>
+				<p className="opacity-80 mt-3 mb-6" >{description}</p>
 				<a
 					href="#!"
-					className="bg-transparent hover:bg-blue-600 border border-blue-600 hover:text-white py-2 px-5 rounded transition"
+					className="bg-transparent hover:bg-green border border-darkBlue hover:text-black py-2 px-5 rounded transition"
 				>
 					Read More
 				</a>
@@ -79,17 +79,13 @@ BlogItem.propTypes = {
 
 export const Blog = () => {
 	return (
-		<section className="ezy__blog8 light py-14 md:py-24 text-stone-800 bg-white dark:bg-[#0b1727] dark:text-white overflow-hidden">
+		<section className="ezy__blog8 light py-4 md:py-6 text-stone-800 dark:bg-[#0b1727] dark:text-white overflow-hidden">
 			<div className="container px-8 md:px-24">
 				<div className="grid grid-cols-12 justify-center">
 					<div className="col-span-12 lg:col-span-8 lg:col-start-3 lg:col-end-11 text-center">
-						<h2 className="text-[32px] lg:text-[45px] leading-none font-bold mb-4">
-							Heal the world with banking blog.
+						<h2 className="text-[32px] lg:text-[45px] text-darkBlue leading-none font-bold mb-4">
+							Latest Insights
 						</h2>
-						<p className="text-lg font-medium opacity-80 lg:px-12 mb-9">
-							Banking crises have developed many times throughout history when
-							one or more risks have emerged for a banking sector as a whole.
-						</p>
 					</div>
 				</div>
 				<div className="grid grid-cols-6 mt-12 gap-6">
@@ -106,7 +102,7 @@ export const Blog = () => {
 				<div className="text-center mt-14">
 					<a
 						href="#!"
-						className="bg-blue-600 hover:bg-opacity-90 text-white font-bold border border-blue-600 py-3 px-7 rounded transition"
+						className="bg-darkBlue text-white hover:bg-green hover:text-black font-bold border border-green py-3 px-7 rounded transition"
 					>
 						Load All Posts
 					</a>

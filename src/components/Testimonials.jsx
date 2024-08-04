@@ -5,17 +5,17 @@ import PropTypes from "prop-types";
 const testimonialList = [
   [
     {
-      author: "— Director of Data Science, Data Driven Pharma Company",
+      author: "Director of Data Science, Data Driven Pharma Company",
       content:
         "InsiMine’s big data management services have significantly enhanced our data processing capabilities. Their tailored solutions have allowed us to handle massive datasets with ease, resulting in more efficient and accurate data analysis. We highly recommend their services to any organization seeking excellence in data management.",
     },
     {
-      author: "— Head of Research, Consumer Goods company",
+      author: "Head of Research, Consumer Goods company",
       content:
         "InsiMine’s expertise in AI and GenAI has been a game-changer for our research and development. Their innovative approaches have accelerated our drug discovery processes and improved our predictive analytics. The team’s knowledge and professionalism are unmatched.",
     },
     {
-      author: "— CIO, MedTech Company",
+      author: "CIO, MedTech Company",
       content:
         "The data lake implementation provided by InsiMine has streamlined our data storage and retrieval processes. Their solution has enabled us to consolidate our disparate data sources into a centralized repository, facilitating better data governance and advanced analytics. We are extremely satisfied with their services.",
     },
@@ -42,9 +42,9 @@ const testimonialList = [
 const TestimonialItem = ({ item }) => {
   const { content, author } = item;
   return (
-    <div className="bg-gray-200 dark:bg-gray-700 shadow-xl rounded-xl hover:-translate-y-1 h-full duration-300 p-6">
-      <p className="text-gray-800 dark:text-gray-200 mb-6 leading-loose">{content}</p>
-      <p className="font-bold text-lg text-gray-900 dark:text-gray-100">{author}</p>
+    <div className="backdrop-blur-md dark:bg-gray-700 shadow-xl rounded-xl hover:-translate-y-1 h-full duration-300 p-6">
+      <p className="text-darkBlue dark:text-gray-200 mb-6 leading-loose">{content}</p>
+      <p className="font-bold text-lg text-darkBlue dark:text-gray-100">{author}</p>
     </div>
   );
 };
@@ -64,11 +64,11 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="ezy__testimonial20 light py-14 md:py-24 bg-transparent text-zinc-900 dark:text-white">
+    <section className="ezy__testimonial20 light py-7 px-2 md:py-12 px-4 bg-transparent text-zinc-900 dark:text-white">
       <div className="container relative">
         <div className="flex justify-between items-center mb-md-4">
           <div className="w-2/3 lg:max-w-lg">
-            <h2 className="font-bold text-3xl md:text-[45px] leading-none mb-6">
+            <h2 className="font-bold text-3xl text-darkBlue md:text-[45px] leading-none mb-6">
               What Our Clients Say
             </h2>
           </div>

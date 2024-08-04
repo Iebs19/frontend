@@ -9,7 +9,8 @@ export default {
       colors: {
         green: '#95d524',       // Custom green color
         lightBlue: '#29c4f8',   // Custom light blue color
-        darkBlue: '#04165d',    // Custom dark blue color
+        darkBlue: '#04165d',  
+        gradient: 'linear-gradient(90deg, #95d524, #29c4f8, #04165d)'  // Custom dark blue color
       },
     },
   },
