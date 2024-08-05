@@ -32,33 +32,33 @@ const AboutUs = () => {
       
       <motion.div className="flex flex-wrap -mx-4" variants={childVariants}>
         <motion.div className="w-full md:w-1/3 px-4 mb-8" variants={childVariants}>
-          <motion.div className="bg-darkBlue p-6 rounded-lg shadow-lg h-full" variants={childVariants}>
-            <motion.h2 className="text-2xl font-semibold text-white mb-2" variants={childVariants}>
+          <motion.div className="bg-darkBlue p-6 rounded-lg shadow-lg backdrop-blur-sm bg-opacity-70 h-full flex flex-col" variants={childVariants}>
+            <motion.h2 className="text-2xl font-semibold text-white mb-2 text-center" variants={childVariants}>
               Our Mission
             </motion.h2>
-            <motion.p className="text-white" variants={childVariants}>
+            <motion.p className="text-white text-center mt-auto mb-auto" variants={childVariants}>
               Enable pharmaceutical and healthcare organizations to harness the power of their data for improved decision-making, better patient outcomes, and enhanced operational efficiency.
             </motion.p>
           </motion.div>
         </motion.div>
 
         <motion.div className="w-full md:w-1/3 px-4 mb-8" variants={childVariants}>
-          <motion.div className="bg-darkBlue p-6 rounded-lg shadow-lg h-full" variants={childVariants}>
-            <motion.h2 className="text-2xl font-semibold text-white mb-2" variants={childVariants}>
+          <motion.div className="bg-darkBlue p-6 rounded-lg shadow-lg backdrop-blur-sm bg-opacity-70 h-full flex flex-col" variants={childVariants}>
+            <motion.h2 className="text-2xl font-semibold text-white mb-2 text-center" variants={childVariants}>
               Our Vision
             </motion.h2>
-            <motion.p className="text-white" variants={childVariants}>
+            <motion.p className="text-white text-center mt-auto mb-auto" variants={childVariants}>
               To be the global leader in data analytics and AI solutions for the pharmaceutical and healthcare industries, supporting enterprises through innovative technologies.
             </motion.p>
           </motion.div>
         </motion.div>
 
         <motion.div className="w-full md:w-1/3 px-4 mb-8" variants={childVariants}>
-          <motion.div className="bg-darkBlue p-6 rounded-lg shadow-lg h-full" variants={childVariants}>
-            <motion.h2 className="text-2xl font-semibold text-white mb-2" variants={childVariants}>
+          <motion.div className="bg-darkBlue p-6 rounded-lg shadow-lg backdrop-blur-sm bg-opacity-70 h-full flex flex-col" variants={childVariants}>
+            <motion.h2 className="text-2xl font-semibold text-white mb-2 text-center" variants={childVariants}>
               Our Values
             </motion.h2>
-            <motion.ul className="list-none p-0 text-white" variants={childVariants}>
+            <motion.ul className="list-none p-0 text-white mt-auto mb-auto" variants={childVariants}>
               <motion.li className="mb-2" variants={childVariants}><strong>Innovation:</strong> Perpetually driving the edge towards what's possible with data and technology.</motion.li>
               <motion.li className="mb-2" variants={childVariants}><strong>Integrity:</strong> Upholding the highest standards of ethics and transparency in all our dealings.</motion.li>
               <motion.li className="mb-2" variants={childVariants}><strong>Collaboration:</strong> Working closely with our clients to understand their unique challenges and deliver tailored solutions.</motion.li>
@@ -69,7 +69,7 @@ const AboutUs = () => {
       </motion.div>
 
       <motion.div className="mb-8" variants={childVariants}>
-        <motion.h2 className="text-3xl font-semibold text-darkBlue mb-2" variants={childVariants}>
+        <motion.h2 className="text-3xl font-semibold text-darkBlue mb-2 text-center" variants={childVariants}>
           Why InsiMine?
         </motion.h2>
         <motion.ul className="list-none p-0 text-darkBlue" variants={childVariants}>
@@ -81,7 +81,7 @@ const AboutUs = () => {
       </motion.div>
 
       <motion.div className="mb-8" variants={childVariants}>
-        <motion.h2 className="text-3xl font-semibold text-darkBlue mb-2" variants={childVariants}>
+        <motion.h2 className="text-3xl font-semibold text-darkBlue mb-2 text-center" variants={childVariants}>
           Our Approach
         </motion.h2>
         <motion.ul className="list-none p-0 text-darkBlue" variants={childVariants}>

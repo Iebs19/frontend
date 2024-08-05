@@ -47,7 +47,9 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-between items-center">
           <div className="w-full lg:w-1/4 mb-8 lg:mb-0">
-            <img src={Logo} alt="Company Logo" className="h-16" />
+          <a href="/">
+            <img src={Logo} alt="Insimine Logo" className="h-16" />
+          </a>
           </div>
           {footerData.menus.map((menu, index) => (
             <div key={index} className="w-full lg:w-1/4 mb-8 lg:mb-0">
