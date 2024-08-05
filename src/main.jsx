@@ -8,6 +8,7 @@ import './index.css';
 import Layout from './Layout.jsx';
 import BlogPage from './pages/BlogPage.jsx';
 import BlogList from './pages/BlogList.jsx';
+import ContactUs from './pages/ContactUs.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <AboutUs />
+      </Layout>
+    ),
+  },
+  {
+    path: "/contact-us",
+    element: (
+      <Layout>
+        <ContactUs />
       </Layout>
     ),
   },

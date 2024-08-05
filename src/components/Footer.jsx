@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 import Logo from "../assets/logo.png"
 
 const footerData = {
-  logo: {Logo}, // Replace with your company's logo URL
+  logo: {Logo},
   menus: [
     {
       title: 'Company',
       links: [
-        { title: 'About Us', link: '/about' },
+        { title: 'About Us', link: '/about-us' },
         { title: 'Careers', link: '/careers' },
-        { title: 'Contact Us', link: '/contact' },
+        { title: 'Contact Us', link: '/contact-us' },
       ],
     },
     {
@@ -47,9 +47,9 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-between items-center">
           <div className="w-full lg:w-1/4 mb-8 lg:mb-0">
-          <a href="/">
-            <img src={Logo} alt="Insimine Logo" className="h-16" />
-          </a>
+            <a href="/">
+              <img src={Logo} alt="Insimine Logo" className="h-16" />
+            </a>
           </div>
           {footerData.menus.map((menu, index) => (
             <div key={index} className="w-full lg:w-1/4 mb-8 lg:mb-0">
@@ -62,7 +62,10 @@ const Footer = () => {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <a href={link.link} className="text-sm text-darkBlue">
+                    <a
+                      href={link.link}
+                      className="text-sm text-darkBlue hover:text-lime-500"
+                    >
                       {link.title}
                     </a>
                   </motion.li>
@@ -78,7 +81,7 @@ const Footer = () => {
               <motion.a
                 key={index}
                 href={item.link}
-                className="text-sm text-darkBlue"
+                className="text-sm text-darkBlue hover:text-green"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
