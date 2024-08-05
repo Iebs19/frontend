@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import contact from '../assets/contact-us.jpg'
 
 const containerVariants = {
   hidden: { opacity: 0, y: '100vh' },
@@ -31,77 +32,87 @@ const officeVariants = {
 const ContactUs = () => {
   return (
     <motion.div
-      className="w-full max-w-7xl mx-auto p-8 backdrop-blur-md rounded-lg shadow-lg"
+      className="w-full min-h-screen pt-16 flex flex-col justify-between"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
-      <motion.div
-        className="w-full bg-blue-300 bg-opacity-60 backdrop-blur-lg p-8 rounded-lg shadow-xl mb-12"
-        variants={formVariants}
-      >
-        <h1 className="text-4xl font-bold text-darkBlue mb-6 text-center">Contact Us</h1>
-        <form className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-              />
-            </div>
+      <div className="flex flex-1 mb-8">
+        <div className="w-2/5"> 
+          <img
+            src={contact} 
+            alt="Background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <motion.div
+          className="w-3/5 p-8 backdrop-blur-md rounded-lg shadow-lg flex flex-col justify-center"
+          variants={formVariants}
+        >
+          <div className="w-full bg-blue-300 bg-opacity-60 backdrop-blur-lg p-8 rounded-lg shadow-xl">
+            <h1 className="text-4xl font-bold text-darkBlue mb-6 text-center">Contact Us</h1>
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="company" className="block text-sm font-medium text-gray-700">Company</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                />
+              </div>
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number</label>
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  required
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                />
+              </div>
+              <div>
+                <label htmlFor="country" className="block text-sm font-medium text-gray-700">Country</label>
+                <input
+                  type="text"
+                  id="country"
+                  name="country"
+                  required
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-darkBlue text-white hover:bg-green hover:text-black font-bold border border-green py-3 px-7 rounded transition"
+              >
+                Submit
+              </button>
+            </form>
           </div>
-          <div>
-            <label htmlFor="company" className="block text-sm font-medium text-gray-700">Company</label>
-            <input
-              type="text"
-              id="company"
-              name="company"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            />
-          </div>
-          <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number</label>
-            <input
-              type="text"
-              id="phone"
-              name="phone"
-              required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            />
-          </div>
-          <div>
-            <label htmlFor="country" className="block text-sm font-medium text-gray-700">Country</label>
-            <input
-              type="text"
-              id="country"
-              name="country"
-              required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-darkBlue text-white hover:bg-green hover:text-black font-bold border border-green py-3 px-7 rounded transition"
-          >
-            Submit
-          </button>
-        </form>
-      </motion.div>
-
+        </motion.div>
+      </div>
       <motion.div
         className="w-full bg-blue-300 bg-opacity-60 backdrop-blur-lg p-8 rounded-lg shadow-xl"
         variants={officeVariants}

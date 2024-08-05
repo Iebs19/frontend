@@ -19,7 +19,7 @@ import logo from '../assets/Insimine-logo.png';
 // }
 
 // export default Navbar
-import React, { useEffect, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -196,6 +196,14 @@ const WhitePapers = () => {
   );
 };
 
+// const Services = () => {
+//   return (
+//     <div>
+//       <h3 className="mb-2 text-sm font-medium"><a href="/services">Sevices</a></h3>
+//     </div>
+//   );
+// };
+
 const TABS = [
   {
     title: "About Us",
@@ -203,12 +211,17 @@ const TABS = [
     Component: () => <a href='/about-us'>About Us</a>,
   },
   {
+    title: "Services",
+    href: "/services",
+    Component: () => <a href='/services'>Services</a>,
+  },
+  {
     title: "Insights",
     Component: () => <div>Insights content</div>,
     dropdown: [
       { title: "Blogs", Component: Blogs },
       { title: "Case Studies", Component: CaseStudies },
-      { title: "White Papers", Component: WhitePapers },
+      { title: "White Papers", Component: WhitePapers }
     ],
   },
   {
