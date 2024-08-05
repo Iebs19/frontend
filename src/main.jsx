@@ -7,6 +7,7 @@ import AboutUs from './pages/AboutUs.jsx';
 import './index.css';
 import Layout from './Layout.jsx';
 import BlogPage from './pages/BlogPage.jsx';
+import BlogList from './pages/BlogList.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,13 @@ const router = createBrowserRouter([
         <App />
       </Layout>
     ),
+  },
+  {
+    path: "/blog",
+    element: (
+      <Layout>
+        <BlogList />
+      </Layout>)
   },
   {
     path: "/blog/:blogID",

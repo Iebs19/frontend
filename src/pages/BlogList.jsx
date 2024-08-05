@@ -1,123 +1,69 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import blogs from '../pages/blogs.json'; // Adjust the path according to your project structure
 
-// Hardcoded blog data
-const initialBlogs = [
-  {
-    title: "How I’m Styling Everyday Black Outfits",
-    description:
-      "It’s no secret that the digital industry is booming. From exciting startups to global brands.",
-    author: "Mitwa Dadkan",
-    image: "https://cdn.easyfrontend.com/pictures/blog/blog_3.jpg",
-    date: "26",
-    month: "Oct",
-    year: "2016",
-  },
-  {
-    title: "Fashion Essentials All Men Should Know",
-    description:
-      "More off this less hello salamander lied porpoise much over tightly circa horse taped.",
-    author: "Mahws Georgia",
-    image: "https://cdn.easyfrontend.com/pictures/blog/blog_14_3.jpg",
-    date: "26",
-    month: "Oct",
-    year: "2016",
-  },
-  {
-    title: "Not Your Regular Home Decoration?",
-    description:
-      "Urna molestie at eleme ntum eu facilisis sed odio Male suada fames.",
-    author: "Alex Hales",
-    image: "https://cdn.easyfrontend.com/pictures/blog/blog_8.jpg",
-    date: "29",
-    month: "Feb",
-    year: "2018",
-  },
-];
+const BlogList = () => {
+  // State to manage the number of visible blogs
+  const [visibleBlogs, setVisibleBlogs] = useState(3);
 
-const BlogPage = () => {
-  const [blogs, setBlogs] = useState(initialBlogs);
-
-  // Commented out the fetching part for now
-  // const fetchBlogs = async () => {
-  //   try {
-  //     const response = await axios.get(`https://api.example.com/blogs?page=${page}`);
-  //     setBlogs([...blogs, ...response.data]);
-  //   } catch (error) {
-  //     console.error("Error fetching blogs:", error);
-  //   }
-  // };
-
-  // Dummy load more function for now
+  // Function to load more blogs
   const loadMoreBlogs = () => {
-    const moreBlogs = [
-      {
-        title: "How I’m Styling Everyday Black Outfits 2",
-        description:
-          "It’s no secret that the digital industry is booming. From exciting startups to global brands.",
-        author: "Mitwa Dadkan",
-        image: "https://cdn.easyfrontend.com/pictures/blog/blog_3.jpg",
-        date: "26",
-        month: "Oct",
-        year: "2016",
-      },
-      {
-        title: "Fashion Essentials All Men Should Know 2",
-        description:
-          "More off this less hello salamander lied porpoise much over tightly circa horse taped.",
-        author: "Mahws Georgia",
-        image: "https://cdn.easyfrontend.com/pictures/blog/blog_14_3.jpg",
-        date: "26",
-        month: "Oct",
-        year: "2016",
-      },
-      {
-        title: "Not Your Regular Home Decoration? 2",
-        description:
-          "Urna molestie at eleme ntum eu facilisis sed odio Male suada fames.",
-        author: "Alex Hales",
-        image: "https://cdn.easyfrontend.com/pictures/blog/blog_8.jpg",
-        date: "29",
-        month: "Feb",
-        year: "2018",
-      },
-    ];
-
-    setBlogs([...blogs, ...moreBlogs]);
+    setVisibleBlogs((prevVisible) => prevVisible + 3);
   };
 
+  // Slice the blogs array to get only the number of visible blogs
+  const displayedBlogs = blogs.slice(0, visibleBlogs);
+
   return (
-    <div className="container mx-auto px-4">
-      <h1 className="text-4xl font-bold text-center mt-24 mb-8">Blogs</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {blogs.map((blog, index) => (
-          <motion.div
-            key={index}
-            className="p-4 bg-gray-100 rounded-lg shadow-md"
-            whileHover={{ scale: 1.05 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <img src={blog.image} alt={blog.title} className="w-full h-48 object-cover rounded-lg mb-4" />
-            <h2 className="text-2xl font-semibold">{blog.title}</h2>
-            <p className="mt-2 text-gray-700">{blog.description}</p>
-            <p className="mt-2 text-gray-500">{blog.author}</p>
-            <p className="mt-2 text-gray-500">{`${blog.date} ${blog.month}, ${blog.year}`}</p>
-          </motion.div>
-        ))}
+    <section className="ezy__blog8 light py-4 md:py-6 text-stone-800 dark:bg-[#0b1727] dark:text-white overflow-hidden">
+      <div className="container px-8 md:px-24">
+        <div className="grid grid-cols-12 justify-center">
+          <div className="col-span-12 lg:col-span-8 lg:col-start-3 lg:col-end-11 text-center">
+            <h2 className="text-[32px] lg:text-[45px] text-darkBlue leading-none font-bold mb-4">
+              Blog
+            </h2>
+          </div>
+        </div>
+        <div className="grid grid-cols-6 mt-12 gap-6">
+          {displayedBlogs.map((blog, index) => (
+            <motion.div
+              key={index}
+              className="col-span-6 md:col-span-3 lg:col-span-2 mb-3 p-4 backdrop-blur-lg rounded-lg shadow-md"
+              whileHover={{ scale: 1.05 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <img
+                src={blog.image}
+                alt={blog.title}
+                className="w-full h-48 object-cover rounded-lg mb-4"
+              />
+              <h4 className="font-medium text-2xl text-darkBlue">{blog.title}</h4>
+              <p className="opacity-80 mt-3 mb-6">{blog.description}</p>
+              <a
+                href={`/blog/${index + 1}`}
+                className="bg-transparent hover:bg-green border border-darkBlue hover:text-black py-2 px-5 rounded transition"
+              >
+                Read More
+              </a>
+            </motion.div>
+          ))}
+        </div>
+        {visibleBlogs < blogs.length && (
+          <div className="text-center mt-8">
+            <motion.button
+              className="bg-darkBlue text-white hover:bg-green hover:text-black font-bold border border-green py-3 px-7 rounded transition"
+              whileHover={{ scale: 1.1 }}
+              onClick={loadMoreBlogs}
+            >
+              Load More
+            </motion.button>
+          </div>
+        )}
       </div>
-      <div className="flex justify-center mt-8">
-        <motion.button
-          className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md"
-          whileHover={{ scale: 1.1 }}
-          onClick={loadMoreBlogs}
-        >
-          Load More
-        </motion.button>
-      </div>
-    </div>
+    </section>
   );
 };
 
-export default BlogPage;
+export default BlogList;
